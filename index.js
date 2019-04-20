@@ -39,7 +39,7 @@ var SnapImage_1 = require("./src/SnapImage");
 var SnapThread_1 = require("./src/SnapThread");
 var snap = {
     rootSrc: {
-        src: __dirname,
+        src: __dirname + '/../..',
         type: 'LOCAL',
         name: null
     },
@@ -71,7 +71,7 @@ var snap = {
                             src: this._combineNameAndSrc(image, this.rootSrc.src),
                             type: this.rootSrc.type
                         };
-                        return [4 /*yield*/, (new SnapImage_1["default"](rootSrc, __dirname)).init()];
+                        return [4 /*yield*/, (new SnapImage_1["default"](rootSrc, this.rootSrc.src)).init()];
                     case 2:
                         snapImages = _c.sent();
                         out.push(snapImages);
@@ -86,13 +86,16 @@ var snap = {
     },
     createImage: function (image) {
         return __awaiter(this, void 0, void 0, function () {
-            var snapImage;
+            var rootSrc, snapImage;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        this.rootSrc.src = this._combineNameAndSrc(image, this.rootSrc.src);
-                        this.rootSrc.name = image;
-                        return [4 /*yield*/, (new SnapImage_1["default"](this.rootSrc, __dirname)).init()];
+                        rootSrc = {
+                            name: image,
+                            src: this._combineNameAndSrc(image, this.rootSrc.src),
+                            type: this.rootSrc.type
+                        };
+                        return [4 /*yield*/, (new SnapImage_1["default"](rootSrc, this.rootSrc.src)).init()];
                     case 1:
                         snapImage = _a.sent();
                         return [2 /*return*/, Promise.resolve(snapImage)];
@@ -110,12 +113,11 @@ var snap = {
     /** private functions **/
     _combineNameAndSrc: function (name, src) {
         if (src[src.length - 1] === '/') {
-            src += name;
+            return src + name;
         }
         else {
-            src += '/' + name;
+            return src + '/' + name;
         }
-        return src;
     }
 };
 module.exports = snap;
