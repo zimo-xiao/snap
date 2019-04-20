@@ -1,11 +1,10 @@
-
 import SnapImage from "./src/SnapImage"
 import SnapThread from "./src/SnapThread"
 import { SnapImageSrc } from "./src/types"
 
 var snap = {
     rootSrc: {
-        src: __dirname,
+        src: __dirname + '/../..',
         type: 'LOCAL',
         name: null
     },
@@ -27,7 +26,7 @@ var snap = {
                 src: this._combineNameAndSrc(image, this.rootSrc.src),
                 type: this.rootSrc.type
             }
-            var snapImages = await (new SnapImage(rootSrc, __dirname)).init()
+            var snapImages = await (new SnapImage(rootSrc, this.rootSrc.src)).init()
             out.push(snapImages)
         }
         return Promise.resolve(out)
@@ -36,7 +35,7 @@ var snap = {
     createImage: async function (image: string): Promise<SnapImage> {
         this.rootSrc.src = this._combineNameAndSrc(image, this.rootSrc.src)
         this.rootSrc.name = image
-        var snapImage = await (new SnapImage(this.rootSrc, __dirname)).init();
+        var snapImage = await (new SnapImage(this.rootSrc, this.rootSrc.src)).init();
         return Promise.resolve(snapImage);
     },
 

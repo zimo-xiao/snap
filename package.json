@@ -1,6 +1,6 @@
 {
   "name": "snap-photo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Slim Node.js image processing & compressing library 📸",
   "main": "index.js",
   "scripts": {

@@ -39,7 +39,7 @@ var SnapImage_1 = require("./src/SnapImage");
 var SnapThread_1 = require("./src/SnapThread");
 var snap = {
     rootSrc: {
-        src: __dirname,
+        src: __dirname + '/../..',
         type: 'LOCAL',
         name: null
     },
@@ -71,7 +71,7 @@ var snap = {
                             src: this._combineNameAndSrc(image, this.rootSrc.src),
                             type: this.rootSrc.type
                         };
-                        return [4 /*yield*/, (new SnapImage_1["default"](rootSrc, __dirname)).init()];
+                        return [4 /*yield*/, (new SnapImage_1["default"](rootSrc, this.rootSrc.src)).init()];
                     case 2:
                         snapImages = _c.sent();
                         out.push(snapImages);
@@ -92,7 +92,7 @@ var snap = {
                     case 0:
                         this.rootSrc.src = this._combineNameAndSrc(image, this.rootSrc.src);
                         this.rootSrc.name = image;
-                        return [4 /*yield*/, (new SnapImage_1["default"](this.rootSrc, __dirname)).init()];
+                        return [4 /*yield*/, (new SnapImage_1["default"](this.rootSrc, this.rootSrc.src)).init()];
                     case 1:
                         snapImage = _a.sent();
                         return [2 /*return*/, Promise.resolve(snapImage)];
