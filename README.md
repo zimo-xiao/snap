@@ -329,7 +329,7 @@ Returns:
 - SnapImage
 
 #### SnapImage.export(options)
-> Revert image to latest render
+> Export image
 ```js
 image.export({
     name: 'cat',    // default snap_originalName
@@ -403,7 +403,10 @@ Parameters:
 - options(object): everything is optional; even passing in options is optional
 
 Returns:
-- info: Array<object> [{
+- info: 
+
+```
+Array<object> [{
     src: {
         src: '/Source/Folder',
         type: string,
@@ -430,7 +433,7 @@ Returns:
         height: number
     }
 }]
-
+```
 
 # TODO
 - SnapImage.filter(): blur/filter
