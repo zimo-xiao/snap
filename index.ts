@@ -60,4 +60,4 @@ var snap = {
     }
 }
 
-export default snap
+module.exports = snap

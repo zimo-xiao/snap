@@ -118,4 +118,4 @@ var snap = {
         return src;
     }
 };
-exports["default"] = snap;
+module.exports = snap;

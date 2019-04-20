@@ -1,7 +1,7 @@
 # Snap 📸
 
 ```sh
-npm install snap-photo
+npm i snap-photo
 ```
 
 Snap is a light weighted Node.js image processing wrapper library for generating web-friendly images using [node-canvas](https://github.com/Automattic/node-canvas). 
