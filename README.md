@@ -344,7 +344,10 @@ Parameters:
 - options(object): everything is optional; even passing in options is optional
 
 Returns:
-- info: object {
+- info: 
+
+``` 
+object {
     src: {
         src: '/Source/Folder',
         type: string,
@@ -371,6 +374,8 @@ Returns:
         height: number
     }
 }
+```
+
 ***
 ### SnapThread
 
